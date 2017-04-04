@@ -10,6 +10,10 @@ this.drink = function () {
   this.volume -= 10;
 }
 
+this.empty = function () {
+  this.volume = 0;
+}
+
 
 
 }
