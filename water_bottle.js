@@ -1,27 +1,23 @@
 
 var WaterBottle = function(){
   this.volume = 0;
-
-this.fill = function () {
-  return this.volume = 100;
 }
 
-this.drink = function () {
-  if (this.volume >= 10 ){
-    this.volume -= 10;    
-  }  
-}
+WaterBottle.prototype = {
+  
+  fill: function() {
+    this.volume = 100;
+  },
 
-this.empty = function () {
+  drink: function () {
+    if (this.volume >= 10 ){
+      this.volume -= 10;    
+    }
+  },
+  
+  empty: function () {
   this.volume = 0;
+  }
 }
-
-
-
-}
-
-
-
-
 
 module.exports = WaterBottle;
