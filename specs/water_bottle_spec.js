@@ -5,7 +5,7 @@ var WaterBottle = require('../water_bottle.js');  //its the export file that is 
 
 //1. should be 0 when empty
 describe('Water Bottle', function() {
-  
+
 it('Should be empty at start', function() {
 var bottle = new WaterBottle();
 assert.strictEqual(0, bottle.volume);  // checks the value and the type
@@ -35,7 +35,34 @@ bottle.empty();
 assert.strictEqual(0, bottle.volume);
 })
 
+it('Volume should be reduced correctly on drink', function() {
+var bottle = new WaterBottle();
+bottle.fill();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+assert.strictEqual(50, bottle.volume);
+})
 
+
+it('Volume should not go below 0', function() {
+var bottle = new WaterBottle();
+bottle.fill();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+bottle.drink();
+assert.strictEqual(0, bottle.volume);
+})
 
 
 });
